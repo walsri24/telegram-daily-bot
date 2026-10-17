@@ -1,0 +1,17 @@
+services:
+  telegram-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: telegram-daily-bot:latest
+    container_name: tele
+    env_file:
+      - .env
+    restart: "no"
+    init: true
+    stop_grace_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
