@@ -34,7 +34,7 @@ def main() -> None:
 
     chat_ids = [
         os.environ["TELEGRAM_CHAT_ID_SELF"],
-        # os.environ["TELEGRAM_CHAT_ID_FRIEND"],
+        os.environ["TELEGRAM_CHAT_ID_FRIEND"],
     ]
 
     for chat_id in dict.fromkeys(chat_ids):
