@@ -1,0 +1,26 @@
+
+name: Telegram Scheduled Messages
+
+on:
+  schedule:
+    - cron: "30 22 * * *"
+      timezone: "Asia/Kolkata"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send Telegram messages
+        run: python scheduled_sender.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID_SELF: ${{ secrets.TELEGRAM_CHAT_ID_SELF }}
+          TELEGRAM_CHAT_ID_FRIEND: ${{ secrets.TELEGRAM_CHAT_ID_FRIEND }}
+          TELEGRAM_MESSAGE: ${{ vars.TELEGRAM_MESSAGE }}
