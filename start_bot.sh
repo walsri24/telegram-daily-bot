@@ -4,7 +4,7 @@ set -euo pipefail
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
-PROJECT_DIR="$HOME/Documents/Coding/telegram_daily_bot"
+PROJECT_DIR="$HOME/telegram_daily_bot"
 cd "$PROJECT_DIR"
 
 if ! docker info >/dev/null 2>&1; then
