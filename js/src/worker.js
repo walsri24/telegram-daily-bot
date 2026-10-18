@@ -1,4 +1,3 @@
-import existingConfig from "../../config.json" with { type: "json" };
 const DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const MAX_HISTORY = 100;
 const MAX_TEXT = 4096;
@@ -16,17 +15,7 @@ const DEFAULT = {
     message: "Good morning! This is your scheduled daily message.",
     enabled: true
   }],
-  history: [],
-  ...existingConfig,
-  schedules: existingConfig.schedules ?? [{
-    id: "main",
-    name: "Main",
-    time: "09:00",
-    days: DAY_ORDER,
-    message: "Good morning! This is your scheduled daily message.",
-    enabled: true
-  }],
-  history: existingConfig.history ?? []
+  history: []
 };
 
 
