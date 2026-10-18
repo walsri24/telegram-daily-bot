@@ -1,0 +1,10 @@
+name = "telegram-daily-bot"
+main = "src/worker.js"
+compatibility_date = "2026-10-18"
+
+[triggers]
+crons = ["* * * * *"]
+
+[[kv_namespaces]]
+binding = "BOT_DATA"
+id = "fbc18ece898c4b9496704af18877295b"
